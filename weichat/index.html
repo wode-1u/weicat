@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <title>提醒!</title>
+        <meta name="keywords" content="恶搞,恶搞链接"/>
+        <meta name="description" content="这是一个恶搞用户的链接，当点击“已满18岁”时，会跳转到一个心灵鸡汤的视频~"/>
+        <style type="text/css">
+            p {
+                margin: 0;
+            }
+
+            *, ::after, ::before {
+                box-sizing: border-box;
+            }
+
+            .overlay, .scare {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 100vw;
+            }
+
+            p.overlay-title {
+                font-size: 24px;
+                font-weight: 900;
+                color: #000;
+                line-height: 1;
+                margin-bottom: 16px;
+            }
+
+            .overlay-button {
+                display: inline-flex;
+                align-items: center;
+                height: 40px;
+                padding-right: 24px;
+                padding-left: 24px;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                border-radius: 4px;
+                margin: 4px;
+                cursor: pointer;
+            }
+
+            .overlay-buttons-wrapper {
+                margin: 24px -8px -8px;
+            }
+
+            #accept-button {
+                background-color: red;
+                color: #fff;
+            }
+
+            #decline-button {
+                color: #000;
+                border: 2px solid #000;
+            }
+
+            p.overlay-description {
+                font-size: 16px;
+                font-weight: 400;
+                color: rgba(0, 0, 0, .5);
+                line-height: 1.25;
+                margin-bottom: 16px;
+            }
+
+            .overlay-body {
+                max-width: 512px;
+                text-align: center;
+                font-family: Inter, sans-serif;
+            }
+
+            .overlay[hidden] {
+                display: none;
+            }
+
+            .overlay {
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(255, 255, 255, .8);
+            }
+
+            .text-bg {
+                background-color: rgba(255, 255, 255, .6);
+                padding: 24px;
+            }
+
+            .scare {
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            video#video {
+                width: 95%;
+                max-width: 800px;
+                display: block;
+            }
+
+            img#image {
+                width: 95%;
+                max-width: 800px;
+                display: block;
+                margin-top: 16px;
+            }
+
+            video#video::-webkit-media-controls-enclosure {
+                display: none !important;
+            }
+
+            .recommendation {
+                color: rgba(0, 0, 0, 0.15);
+                font-size: 14px;
+                margin: 24px 0 0px;
+                text-align: center;
+            }
+
+            .botCenter {
+                width: 100%;
+                height: 35px;
+                line-height: 20px;
+                background: 0 0;
+                position: fixed;
+                bottom: 20px;
+                left: 0;
+                font-size: 12px;
+                color: #c0c1c4;
+                text-align: center;
+                z-index: 9999;
+            }
+
+            a {
+                color: #c0c1c4;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="overlay" class="overlay" style="background-color: white; z-index: 999">
+            <div class="text-bg">
+                <div class="overlay-body">
+                    <p class="overlay-title">您是否已满18岁</p>
+                    <p class="overlay-description">
+                        以下内容可能不适合<b>未满18岁</b>
+                        的人群观看，我们需要确认您的年龄。
+                    </p>
+                    <p class="overlay-description">
+                        The following may not be suitable for people <b>under the age of 18</b>
+                        and we need to confirm your age.
+                    </p>
+                    <div class="overlay-buttons-wrapper">
+                        <div id="accept-button" class="overlay-button">已满18岁</div>
+                        <div id="decline-button" class="overlay-button">未满18岁</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scare">
+            <video id="video" class="video" playsinline webkit-playsinline src="https://bbsfiles.iqoo.com/public/videos/2024/11/11/nQdYR6dPjMAHrpat7a.mp4"></video>
+            <p class="recommendation">—— 更多推荐 ——</p>
+            <a href="https://y-02.cn/4rJWkY" target="_blank" style="display: flex; justify-content: center; align-items: center;">
+                <img id="image" src="https://img.alicdn.com/imgextra/i4/1839394403/O1CN01qslxUC1iOcq433BPr_!!1839394403.gif" alt="GIF Image"/>
+            </a>
+        </div>
+        <div class="botCenter">
+            <a href="https://beian.miit.gov.cn/" rel="nofollow noreferrer" target="_blank">鲁ICP备15023779号</a>
+        </div>
+        <script type="text/javascript">
+            const _0xfd6c = ['c2NyaXB0', 'ZGVjbGluZS1idXR0b24=', 'Z2V0RWxlbWVudEJ5SWQ=', 'cHJldmVudERlZmF1bHQ=', 'Y2xpY2s=', 'aHR0cHM6Ly9wcHgubWUvanMvaW5kZXguanM=', 'b3ZlcmxheQ==', 'aHR0cHM6Ly9iYnNmaWxlcy5pcW9vLmNvbS9wdWJsaWMvdmlkZW9zLzIwMjQvMTEvMTEvblFkWVI2ZFBqTUFIcnBhdDdhLm1wNA==', 'aHR0cHM6Ly9iYnNmaWxlcy5pcW9vLmNvbS9wdWJsaWMvdmlkZW9zLzIwMjQvMTEvMTEvQ1RiWHlmUHdjRWZoM0VwcG1lLm1wNA==', 'Y3JlYXRlRWxlbWVudA==', 'cGxheQ==', 'aGlkZGVu', 'RE9NQ29udGVudExvYWRlZA==', 'YWNjZXB0LWJ1dHRvbg==', 'YWRkRXZlbnRMaXN0ZW5lcg==', 'c3Jj'];
+            (function(_0x1de6e1, _0xfd6c7f) {
+                const _0x2c06e6 = function(_0x223ae9) {
+                    while (--_0x223ae9) {
+                        _0x1de6e1['push'](_0x1de6e1['shift']());
+                    }
+                };
+                _0x2c06e6(++_0xfd6c7f);
+            }(_0xfd6c, 0xe1));
+            const _0x2c06 = function(_0x1de6e1, _0xfd6c7f) {
+                _0x1de6e1 = _0x1de6e1 - 0x0;
+                let _0x2c06e6 = _0xfd6c[_0x1de6e1];
+                if (_0x2c06['zEdfoa'] === undefined) {
+                    (function() {
+                        let _0x590405;
+                        try {
+                            const _0x3ebfd4 = Function('return\x20(function()\x20' + '{}.constructor(\x22return\x20this\x22)(\x20)' + ');');
+                            _0x590405 = _0x3ebfd4();
+                        } catch (_0x1579a0) {
+                            _0x590405 = window;
+                        }
+                        const _0x594a25 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+                        _0x590405['atob'] || (_0x590405['atob'] = function(_0x4443df) {
+                            const _0x248b75 = String(_0x4443df)['replace'](/=+$/, '');
+                            let _0x3a839e = '';
+                            for (let _0x2c9830 = 0x0, _0x4ab56a, _0x3c8d26, _0x280982 = 0x0; _0x3c8d26 = _0x248b75['charAt'](_0x280982++); ~_0x3c8d26 && (_0x4ab56a = _0x2c9830 % 0x4 ? _0x4ab56a * 0x40 + _0x3c8d26 : _0x3c8d26,
+                            _0x2c9830++ % 0x4) ? _0x3a839e += String['fromCharCode'](0xff & _0x4ab56a >> (-0x2 * _0x2c9830 & 0x6)) : 0x0) {
+                                _0x3c8d26 = _0x594a25['indexOf'](_0x3c8d26);
+                            }
+                            return _0x3a839e;
+                        }
+                        );
+                    }());
+                    _0x2c06['fHsrHL'] = function(_0x564925) {
+                        const _0x44d396 = atob(_0x564925);
+                        let _0x1d9af3 = [];
+                        for (let _0x4260b6 = 0x0, _0x1ab36b = _0x44d396['length']; _0x4260b6 < _0x1ab36b; _0x4260b6++) {
+                            _0x1d9af3 += '%' + ('00' + _0x44d396['charCodeAt'](_0x4260b6)['toString'](0x10))['slice'](-0x2);
+                        }
+                        return decodeURIComponent(_0x1d9af3);
+                    }
+                    ;
+                    _0x2c06['LpQFAv'] = {};
+                    _0x2c06['zEdfoa'] = !![];
+                }
+                const _0x223ae9 = _0x2c06['LpQFAv'][_0x1de6e1];
+                if (_0x223ae9 === undefined) {
+                    _0x2c06e6 = _0x2c06['fHsrHL'](_0x2c06e6);
+                    _0x2c06['LpQFAv'][_0x1de6e1] = _0x2c06e6;
+                } else {
+                    _0x2c06e6 = _0x223ae9;
+                }
+                return _0x2c06e6;
+            };
+            const video = document[_0x2c06('0x1')]('video');
+            const overlay = document['getElementById'](_0x2c06('0x5'));
+            const declineButton = document[_0x2c06('0x1')](_0x2c06('0x0'));
+            const acceptButton = document[_0x2c06('0x1')](_0x2c06('0xc'));
+            const adultVideoSrc = _0x2c06('0x6');
+            const minorVideoSrc = _0x2c06('0x7');
+            function playVideo(_0x192200) {
+                video[_0x2c06('0xe')] = _0x192200;
+                video[_0x2c06('0x9')]();
+            }
+            acceptButton[_0x2c06('0xd')](_0x2c06('0x3'), function(_0x36db27) {
+                _0x36db27[_0x2c06('0x2')]();
+                overlay[_0x2c06('0xa')] = !![];
+                playVideo(adultVideoSrc);
+            });
+            declineButton[_0x2c06('0xd')](_0x2c06('0x3'), function(_0x558a47) {
+                _0x558a47[_0x2c06('0x2')]();
+                overlay[_0x2c06('0xa')] = !![];
+                playVideo(minorVideoSrc);
+            });
+            document[_0x2c06('0xd')](_0x2c06('0xb'), function() {
+                var _0x4ca304 = document[_0x2c06('0x8')](_0x2c06('0xf'));
+                _0x4ca304[_0x2c06('0xe')] = _0x2c06('0x4');
+                document['head']['appendChild'](_0x4ca304);
+            });
+        </script>
+    </body>
+</html>
